@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/tariffs"
+        xmlns:tns="http://www.example.com/tariffs"
+        elementFormDefault="qualified">
+
+    <element name="tariffs">
+        <complexType>
+            <sequence>
+                <element ref="tns:tariff"   minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="tariff" type="tns:tariff" abstract="true"/>
+    <element name="start" type="tns:start_tariff" substitutionGroup="tns:tariff"/>
+    <element name="family" type="tns:family_tariff" substitutionGroup="tns:tariff"/>
+    <element name="business" type="tns:business_tariff" substitutionGroup="tns:tariff"/>
+    <element name="unlimited" type="tns:unlimited_tariff" substitutionGroup="tns:tariff"/>
+
+    <complexType name="tariff">
+        <sequence>
+            <element name="operator_name" type="string"/>
+            <element name="payroll" type="double"/>
+            <element name="year" type="gYearMonth"/>
+
+            <element name="calls" type="tns:call_prices"/>
+
+            <element name="sms" type="tns:sms_price"/>
+
+            <element name="favorite_number" type="int"/>
+            <element name="connectionFee" type="double"/>
+        </sequence>
+
+        <attribute name="id" type="tns:tariffID" use="required"/>
+        <attribute name="title" type="string" use="optional"/>
+    </complexType>
+
+
+    <complexType name="start_tariff">
+        <complexContent>
+            <extension base="tns:tariff">
+                <sequence>
+                    <element name="tariffication60Sec" type="double"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+
+    <complexType name="family_tariff">
+        <complexContent>
+            <extension base="tns:tariff">
+                <sequence>
+                    <element name="family_number" type="int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="business_tariff">
+        <complexContent>
+            <extension base="tns:tariff">
+                <sequence>
+                    <element name="tariffication12Sec" type="double"/>
+                    <element name="call_price_for_international_connection" type="double"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="unlimited_tariff">
+        <complexContent>
+            <extension base="tns:tariff">
+                <sequence>
+                    <element name="unlimited_calls_to_any_network" type="double"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+<complexType name="call_prices">
+    <sequence>
+        <element name="call_prices_on_net" type="double"/>
+        <element name="call_prices_on_another_network" type="double"/>
+        <element name="call_prices_to_landline_phones" type="double"/>
+    </sequence>
+</complexType>
+    
+    <simpleType name="sms_price">
+        <restriction base="string">
+            <enumeration value="short_sms"/>
+            <enumeration value="multimedia_mms"/>
+        </restriction>
+    </simpleType>
+
+<simpleType name="tariffID">
+    <restriction base="ID">
+        <pattern value="tariff-(\d{1,3}\.){3}\d{1,3}"/>
+    </restriction>
+</simpleType>
+
+</schema>
