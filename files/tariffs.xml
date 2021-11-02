@@ -3,187 +3,193 @@
         xmlns="http://www.example.com/tariffs"
         xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
 
-    <start id="tariff-123.233.345.543">
-       <operator_name>A1</operator_name>
+    <start id="tariff-1.1.345.543" title="start">
+       <operator-name>A1</operator-name>
         <payroll>9.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.052</call_prices_on_net>
-            <call_prices_on_another_network>0.104</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.101</call_prices_to_landline_phones>
+            <call-prices-on-net>0.052</call-prices-on-net>
+            <call-prices-on-another-network>0.104</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.101</call-prices-to-landline-phones>
         </calls>
-        <sms>short_sms</sms>
-        <favorite_number>1</favorite_number>
+        <sms>short-sms</sms>
+        <tariffication>60sec</tariffication>
+
         <connectionFee>2.0</connectionFee>
-        <tariffication60Sec>0.54</tariffication60Sec>
+        <favorite-number>3</favorite-number>
     </start>
     
-    <start id="tariff-122.333.444.222">
-        <operator_name>life</operator_name>
+    <start id="tariff-1.2.444.222" title="start">
+        <operator-name>Life</operator-name>
         <payroll>8.7</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.045</call_prices_on_net>
-            <call_prices_on_another_network>0.99</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.94</call_prices_to_landline_phones>
+            <call-prices-on-net>0.045</call-prices-on-net>
+            <call-prices-on-another-network>0.99</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.94</call-prices-to-landline-phones>
         </calls>
-        <sms>short_sms</sms>
-        <favorite_number>1</favorite_number>
+        <sms>short-sms</sms>
+        <tariffication>60sec</tariffication>
+
         <connectionFee>1.0</connectionFee>
-        <tariffication60Sec>0.45</tariffication60Sec>
+        <favorite-number>3</favorite-number>
     </start>
     
-    <start id="tariff-113.221.143.314">
-        <operator_name>mts</operator_name>
+    <start id="tariff-1.3.143.314" title="start">
+        <operator-name>MTS</operator-name>
         <payroll>8.9</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.050</call_prices_on_net>
-            <call_prices_on_another_network>0.101</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.95</call_prices_to_landline_phones>
+            <call-prices-on-net>0.050</call-prices-on-net>
+            <call-prices-on-another-network>0.101</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.95</call-prices-to-landline-phones>
         </calls>
-        <sms>short_sms</sms>
-        <favorite_number>2</favorite_number>
+        <sms>short-sms</sms>
+        <tariffication>60sec</tariffication>
+
         <connectionFee>1.5</connectionFee>
-        <tariffication60Sec>0.50</tariffication60Sec>
+        <favorite-number>3</favorite-number>
     </start>
 
-   <family id="tariff-221.331.345.212">
-       <operator_name>A1</operator_name>
+   <family id="tariff-2.1.345.212" title="family">
+       <operator-name>A1</operator-name>
        <payroll>6.5</payroll>
        <year>2021-10</year>
        <calls>
-           <call_prices_on_net>0.045</call_prices_on_net>
-           <call_prices_on_another_network>0.104</call_prices_on_another_network>
-           <call_prices_to_landline_phones>0.103</call_prices_to_landline_phones>
+           <call-prices-on-net>0.045</call-prices-on-net>
+           <call-prices-on-another-network>0.104</call-prices-on-another-network>
+           <call-prices-to-landline-phones>0.103</call-prices-to-landline-phones>
        </calls>
-       <sms>short_sms</sms>
-       <favorite_number>1</favorite_number>
+       <sms>short-sms</sms>
+       <tariffication>60sec</tariffication>
        <connectionFee>3</connectionFee>
-       <family_number>5</family_number>
+       <family-number>5</family-number>
    </family>
     
-    <family id="tariff-331.331.311.212">
-        <operator_name>life</operator_name>
+    <family id="tariff-2.2.311.212" title="family">
+        <operator-name>Life</operator-name>
         <payroll>5.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.038</call_prices_on_net>
-            <call_prices_on_another_network>0.99</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.101</call_prices_to_landline_phones>
+            <call-prices-on-net>0.038</call-prices-on-net>
+            <call-prices-on-another-network>0.99</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.101</call-prices-to-landline-phones>
         </calls>
-        <sms>short_sms</sms>
-        <favorite_number>1</favorite_number>
+        <sms>short-sms</sms>
+        <tariffication>60sec</tariffication>
         <connectionFee>3</connectionFee>
-        <family_number>5</family_number>
+        <family-number>5</family-number>
     </family>
     
-    <family id="tariff-223.331.345.541">
-        <operator_name>mts</operator_name>
+    <family id="tariff-2.3.345.541" title="family">
+        <operator-name>MTS</operator-name>
         <payroll>5.5</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.043</call_prices_on_net>
-            <call_prices_on_another_network>0.103</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.105</call_prices_to_landline_phones>
+            <call-prices-on-net>0.043</call-prices-on-net>
+            <call-prices-on-another-network>0.103</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.105</call-prices-to-landline-phones>
         </calls>
-        <sms>short_sms</sms>
-        <favorite_number>1</favorite_number>
+        <sms>short-sms</sms>
+        <tariffication>60sec</tariffication>
         <connectionFee>3</connectionFee>
-        <family_number>5</family_number>
+        <family-number>5</family-number>
     </family>
 
-    <business id="tariff-223.431.315.331">
-        <operator_name>A1</operator_name>
+    <business id="tariff-3.1.315.331" title="business">
+        <operator-name>A1</operator-name>
         <payroll>25.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.010</call_prices_on_net>
-            <call_prices_on_another_network>0.090</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.042</call_prices_to_landline_phones>
+            <call-prices-on-net>0.010</call-prices-on-net>
+            <call-prices-on-another-network>0.090</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.042</call-prices-to-landline-phones>
+
         </calls>
-        <sms>multimedia_mms</sms>
-        <favorite_number>5</favorite_number>
+        <sms>multimedia-mms</sms>
+        <tariffication>12sec</tariffication>
         <connectionFee>0.5</connectionFee>
-        <tariffication12Sec>0.006</tariffication12Sec>
-        <call_price_for_international_connection>0.090</call_price_for_international_connection>
+        <call-price-for-international-connection>0.090</call-price-for-international-connection>
+
     </business>
 
-    <business id="tariff-223.331.341.241">
-        <operator_name>life</operator_name>
+    <business id="tariff-3.2.341.241" title="business">
+        <operator-name>Life</operator-name>
         <payroll>23.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.09</call_prices_on_net>
-            <call_prices_on_another_network>0.080</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.030</call_prices_to_landline_phones>
+            <call-prices-on-net>0.09</call-prices-on-net>
+            <call-prices-on-another-network>0.080</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.030</call-prices-to-landline-phones>
+
         </calls>
-        <sms>multimedia_mms</sms>
-        <favorite_number>5</favorite_number>
+        <sms>multimedia-mms</sms>
+        <tariffication>12sec</tariffication>
         <connectionFee>0</connectionFee>
-        <tariffication12Sec>0.004</tariffication12Sec>
-        <call_price_for_international_connection>0.090</call_price_for_international_connection>
+        <call-price-for-international-connection>0.090</call-price-for-international-connection>
     </business>
 
-    <business id="tariff-443.131.355.542">
-        <operator_name>mts</operator_name>
+    <business id="tariff-3.3.355.542" title="business">
+        <operator-name>MTS</operator-name>
         <payroll>25.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.010</call_prices_on_net>
-            <call_prices_on_another_network>0.090</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.040</call_prices_to_landline_phones>
+            <call-prices-on-net>0.010</call-prices-on-net>
+            <call-prices-on-another-network>0.090</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.040</call-prices-to-landline-phones>
         </calls>
-        <sms>multimedia_mms</sms>
-        <favorite_number>4</favorite_number>
+        <sms>multimedia-mms</sms>
+        <tariffication>12sec</tariffication>
         <connectionFee>0.5</connectionFee>
-        <tariffication12Sec>0.005</tariffication12Sec>
-        <call_price_for_international_connection>0.085</call_price_for_international_connection>
+        <call-price-for-international-connection>0.085</call-price-for-international-connection>
     </business>
 
-    <unlimited id="tariff-243.134.455.142">
-        <operator_name>A1</operator_name>
+    <unlimited id="tariff-4.1.455.142" title="unlimited">
+        <operator-name>A1</operator-name>
         <payroll>30.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.0</call_prices_on_net>
-            <call_prices_on_another_network>0.0</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.0</call_prices_to_landline_phones>
+            <call-prices-on-net>0.0</call-prices-on-net>
+            <call-prices-on-another-network>0.0</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.0</call-prices-to-landline-phones>
+
         </calls>
-        <sms>multimedia_mms</sms>
-        <favorite_number>3</favorite_number>
+        <sms>multimedia-mms</sms>
+        <tariffication>60sec</tariffication>
         <connectionFee>0.0</connectionFee>
-        <unlimited_calls_to_any_network>12.0</unlimited_calls_to_any_network>
+        <unlimited-calls-to-any-network>12.0</unlimited-calls-to-any-network>
     </unlimited>
 
-    <unlimited id="tariff-421.133.354.541">
-        <operator_name>life</operator_name>
+    <unlimited id="tariff-4.2.354.541" title="unlimited">
+        <operator-name>Life</operator-name>
         <payroll>28.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.0</call_prices_on_net>
-            <call_prices_on_another_network>0.0</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.0</call_prices_to_landline_phones>
+            <call-prices-on-net>0.0</call-prices-on-net>
+            <call-prices-on-another-network>0.0</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.0</call-prices-to-landline-phones>
+
         </calls>
-        <sms>multimedia_mms</sms>
-        <favorite_number>5</favorite_number>
+        <sms>multimedia-mms</sms>
+        <tariffication>60sec</tariffication>
         <connectionFee>0.0</connectionFee>
-        <unlimited_calls_to_any_network>9.0</unlimited_calls_to_any_network>
+        <unlimited-calls-to-any-network>9.0</unlimited-calls-to-any-network>
     </unlimited>
 
-    <unlimited id="tariff-123.234.515.122">
-        <operator_name>mts</operator_name>
+    <unlimited id="tariff-4.3.515.122" title="unlimited">
+        <operator-name>MTS</operator-name>
         <payroll>31.0</payroll>
         <year>2021-10</year>
         <calls>
-            <call_prices_on_net>0.0</call_prices_on_net>
-            <call_prices_on_another_network>0.0</call_prices_on_another_network>
-            <call_prices_to_landline_phones>0.0</call_prices_to_landline_phones>
+            <call-prices-on-net>0.0</call-prices-on-net>
+            <call-prices-on-another-network>0.0</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.0</call-prices-to-landline-phones>
+
         </calls>
-        <sms>multimedia_mms</sms>
-        <favorite_number>3</favorite_number>
+        <sms>multimedia-mms</sms>
+        <tariffication>60sec</tariffication>
         <connectionFee>0.0</connectionFee>
-        <unlimited_calls_to_any_network>10.0</unlimited_calls_to_any_network>
+        <unlimited-calls-to-any-network>10.0</unlimited-calls-to-any-network>
     </unlimited>
 </tariffs>
 

@@ -7,28 +7,25 @@
     <element name="tariffs">
         <complexType>
             <sequence>
-                <element ref="tns:tariff"   minOccurs="1" maxOccurs="unbounded"/>
+                <element ref="tns:tariff"   minOccurs="2" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
 
     <element name="tariff" type="tns:tariff" abstract="true"/>
-    <element name="start" type="tns:start_tariff" substitutionGroup="tns:tariff"/>
-    <element name="family" type="tns:family_tariff" substitutionGroup="tns:tariff"/>
-    <element name="business" type="tns:business_tariff" substitutionGroup="tns:tariff"/>
-    <element name="unlimited" type="tns:unlimited_tariff" substitutionGroup="tns:tariff"/>
+    <element name="start" type="tns:start-tariff" substitutionGroup="tns:tariff"/>
+    <element name="family" type="tns:family-tariff" substitutionGroup="tns:tariff"/>
+    <element name="business" type="tns:business-tariff" substitutionGroup="tns:tariff"/>
+    <element name="unlimited" type="tns:unlimited-tariff" substitutionGroup="tns:tariff"/>
 
     <complexType name="tariff">
         <sequence>
-            <element name="operator_name" type="string"/>
+            <element name="operator-name" type="tns:operator"/>
             <element name="payroll" type="double"/>
             <element name="year" type="gYearMonth"/>
-
-            <element name="calls" type="tns:call_prices"/>
-
-            <element name="sms" type="tns:sms_price"/>
-
-            <element name="favorite_number" type="int"/>
+            <element name="calls" type="tns:call-price"/>
+            <element name="sms" type="tns:sms-price"/>
+            <element name="tariffication" type="tns:tariffication"/>
             <element name="connectionFee" type="double"/>
         </sequence>
 
@@ -37,60 +34,75 @@
     </complexType>
 
 
-    <complexType name="start_tariff">
+    <complexType name="start-tariff">
         <complexContent>
             <extension base="tns:tariff">
                 <sequence>
-                    <element name="tariffication60Sec" type="double"/>
+                    <element name="favorite-number" type="int"/>
                 </sequence>
             </extension>
         </complexContent>
     </complexType>
 
 
-    <complexType name="family_tariff">
+    <complexType name="family-tariff">
         <complexContent>
             <extension base="tns:tariff">
                 <sequence>
-                    <element name="family_number" type="int"/>
+                    <element name="family-number" type="int"/>
                 </sequence>
             </extension>
         </complexContent>
     </complexType>
 
-    <complexType name="business_tariff">
+    <complexType name="business-tariff">
         <complexContent>
             <extension base="tns:tariff">
                 <sequence>
-                    <element name="tariffication12Sec" type="double"/>
-                    <element name="call_price_for_international_connection" type="double"/>
+                    <element name="call-price-for-international-connection" type="double"/>
                 </sequence>
             </extension>
         </complexContent>
     </complexType>
 
-    <complexType name="unlimited_tariff">
+    <complexType name="unlimited-tariff">
         <complexContent>
             <extension base="tns:tariff">
                 <sequence>
-                    <element name="unlimited_calls_to_any_network" type="double"/>
+                    <element name="unlimited-calls-to-any-network" type="double"/>
                 </sequence>
             </extension>
         </complexContent>
     </complexType>
 
-<complexType name="call_prices">
-    <sequence>
-        <element name="call_prices_on_net" type="double"/>
-        <element name="call_prices_on_another_network" type="double"/>
-        <element name="call_prices_to_landline_phones" type="double"/>
-    </sequence>
-</complexType>
-    
-    <simpleType name="sms_price">
+    <simpleType name="operator">
         <restriction base="string">
-            <enumeration value="short_sms"/>
-            <enumeration value="multimedia_mms"/>
+            <enumeration value="A1" />
+            <enumeration value="MTS" />
+            <enumeration value="Life"/>
+         </restriction>
+    </simpleType>
+
+<complexType name="call-price">
+    <sequence>
+        <element name="call-prices-on-net" type="double"/>
+        <element name="call-prices-on-another-network" type="double"/>
+        <element name="call-prices-to-landline-phones" type="double"/>
+
+    </sequence>
+
+</complexType>
+    <simpleType name="tariffication">
+        <restriction base="string">
+            <enumeration value="12sec"/>
+            <enumeration value="60sec"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="sms-price">
+        <restriction base="string">
+            <enumeration value="short-sms"/>
+            <enumeration value="multimedia-mms"/>
         </restriction>
     </simpleType>
 
