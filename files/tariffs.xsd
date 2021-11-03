@@ -77,9 +77,9 @@
 
     <simpleType name="operator">
         <restriction base="string">
-            <enumeration value="A1" />
-            <enumeration value="MTS" />
-            <enumeration value="Life"/>
+            <enumeration value="a1" />
+            <enumeration value="mts" />
+            <enumeration value="life"/>
          </restriction>
     </simpleType>
 

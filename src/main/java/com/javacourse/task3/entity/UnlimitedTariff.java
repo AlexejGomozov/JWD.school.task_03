@@ -9,8 +9,8 @@ public class UnlimitedTariff extends Tariff{
 
     public UnlimitedTariff(){
     }
-    public UnlimitedTariff(String id, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, double unlimitedCallsToAnyNetwork){
-        super(id, operatorName, payroll, year, calls, sms,tariffication, connectionFee);
+    public UnlimitedTariff(String id, String title, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, double unlimitedCallsToAnyNetwork){
+        super(id, title, operatorName, payroll, year, calls, sms,tariffication, connectionFee);
         this.unlimitedCallsToAnyNetwork = unlimitedCallsToAnyNetwork;
     }
 

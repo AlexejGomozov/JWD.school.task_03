@@ -15,7 +15,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.time.YearMonth;
-import java.util.HashSet;
+
 
 public class TariffDomBuilder extends AbstractTariffBuilder{
 
@@ -81,6 +81,7 @@ public class TariffDomBuilder extends AbstractTariffBuilder{
     }
        private void buildTariff(Element element, Tariff tariff){
        tariff.setId(element.getAttribute("id"));
+       if(element.getAttribute("title")!=null){tariff.setTitle(element.getAttribute("title"));}
        CallsType callsType;
        String type = element.getAttribute("type");
        switch(type){

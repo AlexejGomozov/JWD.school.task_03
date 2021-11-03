@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
 
     <start id="tariff-1.1.345.543" title="start">
-       <operator-name>A1</operator-name>
+       <operator-name>a1</operator-name>
         <payroll>9.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -20,7 +20,7 @@
     </start>
     
     <start id="tariff-1.2.444.222" title="start">
-        <operator-name>Life</operator-name>
+        <operator-name>life</operator-name>
         <payroll>8.7</payroll>
         <year>2021-10</year>
         <calls>
@@ -36,7 +36,7 @@
     </start>
     
     <start id="tariff-1.3.143.314" title="start">
-        <operator-name>MTS</operator-name>
+        <operator-name>mts</operator-name>
         <payroll>8.9</payroll>
         <year>2021-10</year>
         <calls>
@@ -52,7 +52,7 @@
     </start>
 
    <family id="tariff-2.1.345.212" title="family">
-       <operator-name>A1</operator-name>
+       <operator-name>a1</operator-name>
        <payroll>6.5</payroll>
        <year>2021-10</year>
        <calls>
@@ -67,7 +67,7 @@
    </family>
     
     <family id="tariff-2.2.311.212" title="family">
-        <operator-name>Life</operator-name>
+        <operator-name>life</operator-name>
         <payroll>5.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -82,7 +82,7 @@
     </family>
     
     <family id="tariff-2.3.345.541" title="family">
-        <operator-name>MTS</operator-name>
+        <operator-name>mts</operator-name>
         <payroll>5.5</payroll>
         <year>2021-10</year>
         <calls>
@@ -97,7 +97,7 @@
     </family>
 
     <business id="tariff-3.1.315.331" title="business">
-        <operator-name>A1</operator-name>
+        <operator-name>a1</operator-name>
         <payroll>25.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -114,7 +114,7 @@
     </business>
 
     <business id="tariff-3.2.341.241" title="business">
-        <operator-name>Life</operator-name>
+        <operator-name>life</operator-name>
         <payroll>23.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -125,12 +125,12 @@
         </calls>
         <sms>multimedia-mms</sms>
         <tariffication>12sec</tariffication>
-        <connectionFee>0</connectionFee>
+        <connectionFee>0.0</connectionFee>
         <call-price-for-international-connection>0.090</call-price-for-international-connection>
     </business>
 
     <business id="tariff-3.3.355.542" title="business">
-        <operator-name>MTS</operator-name>
+        <operator-name>mts</operator-name>
         <payroll>25.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -145,7 +145,7 @@
     </business>
 
     <unlimited id="tariff-4.1.455.142" title="unlimited">
-        <operator-name>A1</operator-name>
+        <operator-name>a1</operator-name>
         <payroll>30.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -161,7 +161,7 @@
     </unlimited>
 
     <unlimited id="tariff-4.2.354.541" title="unlimited">
-        <operator-name>Life</operator-name>
+        <operator-name>life</operator-name>
         <payroll>28.0</payroll>
         <year>2021-10</year>
         <calls>
@@ -177,7 +177,7 @@
     </unlimited>
 
     <unlimited id="tariff-4.3.515.122" title="unlimited">
-        <operator-name>MTS</operator-name>
+        <operator-name>mts</operator-name>
         <payroll>31.0</payroll>
         <year>2021-10</year>
         <calls>

@@ -9,8 +9,8 @@ public class StartTariff extends Tariff{
     public StartTariff(){
     }
 
-    public StartTariff(String id, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, int favoriteNumber){
-        super(id, operatorName, payroll, year, calls, sms,tariffication, connectionFee);
+    public StartTariff(String id,String title, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, int favoriteNumber){
+        super(id, title,operatorName, payroll, year, calls, sms,tariffication, connectionFee);
         this.favoriteNumber = favoriteNumber;
     }
 

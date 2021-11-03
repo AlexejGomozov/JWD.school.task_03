@@ -3,8 +3,7 @@ package com.javacourse.task3.entity;
 import java.util.Locale;
 
 public enum TariffTag {
-    TARIFF("tariff"),
-    TARIFF_ID("tariff_id"),
+
     START_TARIFF("start-tariff"),
     FAMILY_TARIFF("family-tariff"),
     BUSINESS_TARIFF("business-tariff"),
@@ -12,12 +11,14 @@ public enum TariffTag {
     OPERATOR_NAME("operator-name"),
     PAYROLL("payroll"),
     YEAR("year"),
+    TARIFF("tariff"),
+    TARIFF_ID("tariff_id"),
     CALLS("calls"),
     CALL_PRICE_FOR_INTERNATIONAL_CONNECTION("call-price-for-international-connection"),
-//    CALL_PRICES_ON_NET("call-prices-on-net"),
+    CALL_PRICES_ON_NET("call-prices-on-net"),
     UNLIMITED_CALLS_TO_ANY_NETWORK("unlimited-calls-to-any-network"),
-//    CALL_PRICES_ON_ANOTHER_NETWORK("call-prices-on-another-network"),
-//    CALL_PRICES_T0_LANDLINE_PHONES("call-prices-to-landline-phones"),
+    CALL_PRICES_ON_ANOTHER_NETWORK("call-prices-on-another-network"),
+    CALL_PRICES_T0_LANDLINE_PHONES("call-prices-to-landline-phones"),
       TARIFFICATION("tariffication"),
 //    TARIFFICATION_60_SEC("tariffication60Sec"),
     SMS("sms"),

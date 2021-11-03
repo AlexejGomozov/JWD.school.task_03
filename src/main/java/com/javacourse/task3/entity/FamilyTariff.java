@@ -8,8 +8,8 @@ public class FamilyTariff extends Tariff{
 
     public FamilyTariff(){
     }
-    public FamilyTariff(String id, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, int familyNumber){
-        super(id, operatorName, payroll, year, calls, sms, tariffication, connectionFee);
+    public FamilyTariff(String id,String title, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, int familyNumber){
+        super(id,title, operatorName, payroll, year, calls, sms, tariffication, connectionFee);
         this.familyNumber = familyNumber;
     }
 

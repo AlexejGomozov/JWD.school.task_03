@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public abstract class Tariff {
     private  String id;
+    private String title;
     private OperatorName operatorName;
     private double payroll;
     private YearMonth year;
@@ -14,9 +15,11 @@ public abstract class Tariff {
     private double connectionFee;
 
    public Tariff(){
+       title = "unknown";
    }
-       public Tariff(String id, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee ){
+       public Tariff(String id, String title,OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee ){
                this.id = id;
+               this.title = title;
                this.operatorName = operatorName;
                this.payroll = payroll;
                this.year = year;
@@ -31,6 +34,8 @@ public abstract class Tariff {
        public void setId(String id){
        this.id = id;
        }
+       public String getTitle(){ return title;}
+    public void setTitle(String title){this.title = title;}
        public OperatorName getOperatorName(){
        return operatorName;
        }
@@ -96,8 +101,9 @@ public abstract class Tariff {
     @Override
     public String toString() {
        final StringBuilder sb = new StringBuilder();
-       sb.append("id ='").append(id).append(id).append('\'');
-       sb.append(", operatorName='").append(operatorName).append('\'');
+       sb.append("id =").append(id).append(id).append('\'');
+       sb.append(", title=").append(title).append('\'');
+       sb.append(", operatorName=").append(operatorName).append('\'');
        sb.append(", payroll=").append(payroll);
        sb.append(", year=").append(year);
        sb.append(", calls=").append(calls);

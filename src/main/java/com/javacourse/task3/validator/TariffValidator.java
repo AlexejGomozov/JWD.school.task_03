@@ -17,7 +17,7 @@ public class TariffValidator {
     private static final Logger logger = LogManager.getLogger();
     private static final String SCHEMA_NAME = "files.tariffs.xsd";
 
-    public boolean validateTariffXmlFile(String fileName){
+    public static boolean validateTariffXmlFile(String fileName){
 
         boolean result = false;
         String language = XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI;
