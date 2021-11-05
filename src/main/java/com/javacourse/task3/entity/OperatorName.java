@@ -1,9 +1,10 @@
 package com.javacourse.task3.entity;
 
 public enum OperatorName {
-    A1,
-    MTS,
-    LIFE;
+
+    a1,
+    life,
+    mts;
 
     @Override
     public String toString(){

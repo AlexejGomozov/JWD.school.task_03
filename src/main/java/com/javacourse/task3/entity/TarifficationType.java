@@ -1,6 +1,13 @@
 package com.javacourse.task3.entity;
 
 public enum TarifficationType {
-    SEC_12,
-    SEC_60
+    sec12,
+    sec60;
+
+    private static final char HYPHEN = '-';
+    private static final char UNDERSCORE = '_';
+    @Override
+    public String toString() {
+        return this.name().toLowerCase().replace(UNDERSCORE, HYPHEN);
+    }
 }

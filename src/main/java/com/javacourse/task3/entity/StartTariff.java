@@ -1,19 +1,13 @@
 package com.javacourse.task3.entity;
 
-import java.time.YearMonth;
 import java.util.Objects;
 
 public class StartTariff extends Tariff{
-
    private int favoriteNumber;
+
     public StartTariff(){
+        super();
     }
-
-    public StartTariff(String id,String title, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, int favoriteNumber){
-        super(id, title,operatorName, payroll, year, calls, sms,tariffication, connectionFee);
-        this.favoriteNumber = favoriteNumber;
-    }
-
      public int getFavoriteNumber(){
         return favoriteNumber;
      }

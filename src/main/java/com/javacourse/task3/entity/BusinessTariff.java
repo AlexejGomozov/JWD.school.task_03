@@ -9,11 +9,9 @@ public class BusinessTariff extends Tariff{
     private double callPriceForInternationalConnection;
 
     public BusinessTariff(){
+        super();
     }
-    public BusinessTariff(String id, String title, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, double callPriceForInternationalConnection){
-        super(id, title, operatorName, payroll, year, calls, sms, tariffication, connectionFee);
-        this.callPriceForInternationalConnection = callPriceForInternationalConnection;
-    }
+
      public double getCallPriceForInternationalConnection(){
         return callPriceForInternationalConnection;
     }

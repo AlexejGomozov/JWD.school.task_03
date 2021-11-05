@@ -1,18 +1,13 @@
 package com.javacourse.task3.entity;
 
-import java.time.YearMonth;
 import java.util.Objects;
 
 public class FamilyTariff extends Tariff{
     int familyNumber;
 
     public FamilyTariff(){
+        super();
     }
-    public FamilyTariff(String id,String title, OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee, int familyNumber){
-        super(id,title, operatorName, payroll, year, calls, sms, tariffication, connectionFee);
-        this.familyNumber = familyNumber;
-    }
-
     public int getFamilyNumber() {
         return familyNumber;
     }
@@ -38,7 +33,7 @@ public class FamilyTariff extends Tariff{
     public String toString() {
         StringBuilder sb = new StringBuilder("FamilyTariff{");
         sb.append(super.toString());
-        sb.append("familyNumber=").append(familyNumber);
+        sb.append(" familyNumber=").append(familyNumber);
         sb.append("} ");
         return sb.toString();
     }
