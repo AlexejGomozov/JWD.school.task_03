@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 
 public class TariffValidator {
     private static final Logger logger = LogManager.getLogger();
-    private static final String SCHEMA_NAME = "files.tariffs.xsd";
+    private static final String SCHEMA_NAME = "resources.tariffs.xsd";
 
     public static boolean validateTariffXmlFile(String fileName){
 

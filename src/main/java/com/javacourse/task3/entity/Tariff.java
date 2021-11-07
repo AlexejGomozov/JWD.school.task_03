@@ -1,7 +1,6 @@
 package com.javacourse.task3.entity;
 
 import java.time.YearMonth;
-import java.util.Objects;
 
 public abstract class Tariff {
     private  String id;
@@ -19,17 +18,6 @@ public abstract class Tariff {
        title = "unknown";
        calls = new CallsType();
    }
-//       public Tariff(String id, String title,OperatorName operatorName, double payroll, YearMonth year, CallsType calls, SmsType sms, TarifficationType tariffication, double connectionFee ){
-//               this.id = id;
-//               this.title = title;
-//               this.operatorName = operatorName;
-//               this.payroll = payroll;
-//               this.year = year;
-//               this.calls = calls;
-//               this.sms = sms;
-//               this.tariffication = tariffication;
-//               this.connectionFee = connectionFee;
-//       }
        public String getId(){
        return id;
        }
@@ -67,15 +55,13 @@ public abstract class Tariff {
     public CallsType getCallsType() {
         return calls;
     }
-
     public void setCallsType(CallsType calls) {
         this.calls = calls;
     }
 
-    public SmsType getSms() {
+       public SmsType getSmsType() {
            return sms;
        }
-
        public void setSmsType(SmsType sms) {
            this.sms = sms;
        }
@@ -104,9 +90,16 @@ public abstract class Tariff {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, operatorName, payroll, year, connectionFee, calls, sms, tariffication);
+        int result = 1;
+        result = 31 * result + operatorName.hashCode();
+        result = 31 * result + (int) payroll;
+        result = 31 * result + year.hashCode();
+        result = 31 * result + (int) connectionFee;
+        result = 31 * result + calls.hashCode();
+        result = 31 * result + sms.hashCode();
+        result = 31 * result + tariffication.hashCode();
+        return result;
     }
-
     @Override
     public String toString() {
        final StringBuilder sb = new StringBuilder();

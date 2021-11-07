@@ -1,7 +1,5 @@
 package com.javacourse.task3.entity;
 
-import java.util.Objects;
-
 public class UnlimitedTariff extends Tariff{
 
     private double unlimitedCallsToAnyNetwork;
@@ -28,7 +26,10 @@ public class UnlimitedTariff extends Tariff{
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), unlimitedCallsToAnyNetwork);
+        int result = 1;
+        result = 31*result + super.hashCode();
+        result = 31*result + (int)unlimitedCallsToAnyNetwork;
+        return result;
     }
 
     @Override

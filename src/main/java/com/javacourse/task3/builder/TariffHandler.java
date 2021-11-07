@@ -5,82 +5,103 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.YearMonth;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
+import java.util.*;
+import static com.javacourse.task3.builder.TariffXmlTag.*;
 
 public class TariffHandler extends DefaultHandler {
-    //private static final char HYPHEN = '-';
-   // private static final char UNDERSCORE = '_';
-    private  Set<Tariff> tariffs;
-    private EnumSet<TariffTag> withText;
+
+    private static final char HYPHEN = '-';
+    private static final char UNDERSCORE = '_';
+
+    private List<Tariff> tariffs;
+    private EnumSet<TariffXmlTag> withText;
     private Tariff currentTariff;
-    private TariffTag currentTag;
+    private TariffXmlTag currentTag;
 
     public TariffHandler(){
-        tariffs = new HashSet<>();
-        withText = EnumSet.range(TariffTag.OPERATOR_NAME,TariffTag.CONNECTION_FEE);
+        tariffs = new ArrayList<>();
+        withText = EnumSet.range(OPERATOR_NAME,FAMILY_NUMBER);
     }
-    public Set<Tariff> getTariffs(){
+    public List<Tariff> getTariffs(){
         return tariffs;
     }
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes){
-        String StartTariffTag = TariffTag.START_TARIFF.toString();
-        String FamilyTariffTag = TariffTag.FAMILY_TARIFF.toString();
-        String BusinessTariffTag = TariffTag.BUSINESS_TARIFF.toString();
-        String UnlimitedTariffTag = TariffTag.UNLIMITED_TARIFF.toString();
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
 
-        if(StartTariffTag.equals(qName) || FamilyTariffTag.equals(qName) || BusinessTariffTag.equals(qName) || UnlimitedTariffTag.equals(qName)){
-            if(StartTariffTag.equals(qName)) {currentTariff = new StartTariff(); fillAttrValue(attributes);}
-            if(FamilyTariffTag.equals(qName)) {currentTariff = new FamilyTariff(); fillAttrValue(attributes);}
-            if(BusinessTariffTag.equals(qName)) {currentTariff = new BusinessTariff(); fillAttrValue(attributes);}
-            if(UnlimitedTariffTag.equals(qName)) {currentTariff = new UnlimitedTariff(); fillAttrValue(attributes);}
-        }else {
-            TariffTag temp = TariffTag.valueOf((qName.toUpperCase().replace("-","_")));
-              if(withText.contains(temp)) {currentTag = temp;}
+        String StartTariffTag = START_TARIFF.toString();
+        String FamilyTariffTag = FAMILY_TARIFF.toString();
+        String BusinessTariffTag = BUSINESS_TARIFF.toString();
+        String UnlimitedTariffTag = UNLIMITED_TARIFF.toString();
+
+        if (!qName.toUpperCase().equals(TARIFFS)) {
+            if (StartTariffTag.equals(qName)
+                    || FamilyTariffTag.equals(qName)
+                    || BusinessTariffTag.equals(qName)
+                    || UnlimitedTariffTag.equals(qName)) {
+
+                if (StartTariffTag.equals(qName)) {
+                    currentTariff = new StartTariff(); }
+                if (FamilyTariffTag.equals(qName)) {
+                    currentTariff = new FamilyTariff(); }
+                if (BusinessTariffTag.equals(qName)) {
+                    currentTariff = new BusinessTariff(); }
+                if (UnlimitedTariffTag.equals(qName)) {
+                    currentTariff = new UnlimitedTariff(); }
+
+                currentTariff.setId(attributes.getValue("id"));
+                if (attributes.getValue("title") != null) {
+                    currentTariff.setTitle(attributes.getValue("title"));
+                }
+            } else {
+                TariffXmlTag temp = TariffXmlTag.valueOf((qName.toUpperCase().replace(HYPHEN, UNDERSCORE)));
+                if (withText.contains(temp)) {
+                    currentTag = temp;
+                }
+            }
         }
     }
     @Override
     public void endElement(String uri, String localName, String qName) {
-        if (TariffTag.START_TARIFF.getTitle().equals(qName) || TariffTag.FAMILY_TARIFF.getTitle().equals(qName) || TariffTag.BUSINESS_TARIFF.getTitle().equals(qName) || TariffTag.UNLIMITED_TARIFF.getTitle().equals(qName)) {
-       tariffs.add(currentTariff);
+        if (START_TARIFF.toString().equals(qName)
+                || FAMILY_TARIFF.toString().equals(qName)
+                || BUSINESS_TARIFF.toString().equals(qName)
+                || UNLIMITED_TARIFF.toString().equals(qName)) {
+             tariffs.add(currentTariff);
         }
     }
     @Override
     public void characters(char[] ch, int start, int length){
-        String data = new String(ch, start, length).strip();
+
+        String data = new String(ch, start, length).trim();
         if(currentTag != null){
-            switch (currentTag){
-                case SMS -> currentTariff.setSmsType(SmsType.valueOf(data));
-                case YEAR -> currentTariff.setYear(YearMonth.parse(data));
-                case CALLS -> currentTariff.setCallsType(CallsType.valueOf(data));
-                case TARIFFICATION -> currentTariff.setTarifficationType(TarifficationType.valueOf(data));
+            switch (currentTag) {
+
+                case OPERATOR_NAME -> currentTariff.setOperatorName(OperatorName.valueOf(data));
                 case PAYROLL -> currentTariff.setPayroll(Double.parseDouble(data));
+                case YEAR -> currentTariff.setYear(YearMonth.parse(data));
+                case CONNECTION_FEE -> currentTariff.setConnectionFee(Double.parseDouble(data));
+                case CALLS ->{}
+                case CALL_PRICES_ON_NET -> currentTariff.getCallsType().setCall_prices_on_net(Double.parseDouble(data));
+                case CALL_PRICES_ON_ANOTHER_NETWORK -> currentTariff.getCallsType().setCall_prises_on_another_network(Double.parseDouble(data));
+                case CALL_PRICES_TO_LANDLINE_PHONES -> currentTariff.getCallsType().setCall_prices_to_landline_phones(Double.parseDouble(data));
+                case CALL_PRICE_FOR_INTERNATIONAL_CONNECTION -> {
+                    BusinessTariff businessTariff = (BusinessTariff) currentTariff;
+                    businessTariff.setCallPriceForInternationalConnection(Double.parseDouble(data)); }
+                case UNLIMITED_CALLS_TO_ANY_NETWORK -> {
+                    UnlimitedTariff unlimitedTariff = (UnlimitedTariff) currentTariff;
+                    unlimitedTariff.setUnlimitedCallsToAnyNetwork(Double.parseDouble(data)); }
+                case SMS -> currentTariff.setSmsType(SmsType.valueOf(data));
+                case TARIFFICATION -> currentTariff.setTarifficationType(TarifficationType.valueOf(data));
+                case FAVORITE_NUMBER -> {
+                    StartTariff startTariff = (StartTariff) currentTariff;
+                    startTariff.setFavoriteNumber(Integer.parseInt(data)); }
+                case FAMILY_NUMBER -> {
+                    FamilyTariff familyTariff = (FamilyTariff) currentTariff;
+                    familyTariff.setFamilyNumber(Integer.parseInt(data)); }
                 default -> throw new EnumConstantNotPresentException(
                         currentTag.getDeclaringClass(), currentTag.name());
             }
         }
         currentTag = null;
-    }
-
-    private void fillAttrValue(Attributes attributes){
-        if(attributes.getLength()==1){
-            currentTariff.setId(attributes.getValue(0));
-            currentTariff.setOperatorName(OperatorName.A1);
-        }
-        if(attributes.getLength()==2){
-            String qAttrName_0 = attributes.getQName(0);
-            if(qAttrName_0.equals(TariffTag.OPERATOR_NAME.getTitle())){
-                OperatorName operatorName = OperatorName.valueOf(attributes.getValue(0).toUpperCase());
-                currentTariff.setOperatorName(operatorName);
-                currentTariff.setCallsType(CallsType.valueOf(attributes.getValue(1)));
-            }else{
-                currentTariff.setCallsType(CallsType.valueOf(attributes.getValue(0)));
-                OperatorName operatorName = OperatorName.valueOf(attributes.getValue(1).toUpperCase());
-                currentTariff.setOperatorName(operatorName);
-            }
-        }
     }
 }

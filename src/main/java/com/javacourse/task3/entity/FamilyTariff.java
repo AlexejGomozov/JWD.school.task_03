@@ -26,7 +26,10 @@ public class FamilyTariff extends Tariff{
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), familyNumber);
+        int result = 1;
+        result += 31*result + super.hashCode();
+        result += 31*result + familyNumber;
+        return result;
     }
 
     @Override

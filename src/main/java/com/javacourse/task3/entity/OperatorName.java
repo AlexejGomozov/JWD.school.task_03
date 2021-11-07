@@ -8,6 +8,6 @@ public enum OperatorName {
 
     @Override
     public String toString(){
-        return this.name().toLowerCase();
+        return this.name();
     }
 }

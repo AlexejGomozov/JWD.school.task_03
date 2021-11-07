@@ -1,7 +1,5 @@
 package com.javacourse.task3.entity;
 
-import java.util.Objects;
-
 public class CallsType {
 
     private double call_prices_on_net;
@@ -49,7 +47,11 @@ public class CallsType {
 
     @Override
     public int hashCode() {
-        return Objects.hash(call_prices_on_net, call_prises_on_another_network, call_prices_to_landline_phones);
+        int result = 1;
+        result = 31*result + (int)call_prices_on_net;
+        result = 31*result + (int)call_prises_on_another_network;
+        result = 31*result + (int)call_prices_to_landline_phones;
+        return result;
     }
 
     @Override

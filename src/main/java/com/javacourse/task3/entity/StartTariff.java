@@ -25,7 +25,10 @@ public class StartTariff extends Tariff{
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), favoriteNumber);
+        int result = 1;
+        result = 31*result + super.hashCode();
+        result = 31*result + favoriteNumber;
+        return result;
     }
 
     @Override
