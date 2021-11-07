@@ -1,7 +1,5 @@
 package com.javacourse.task3.entity;
 
-import java.util.Objects;
-
 public class FamilyTariff extends Tariff{
     int familyNumber;
 

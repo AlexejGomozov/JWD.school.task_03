@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tariffs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.example.com/tariffs"
+        xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
+
+    <start-tariff id="tariff-1.1.345.543" title="start">
+       <operator-name>a1</operator-name>
+        <payroll>9.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>2.0</connection-fee>
+        <calls>
+            <call-prices-on-net>0.052</call-prices-on-net>
+            <call-prices-on-another-network>0.104</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.101</call-prices-to-landline-phones>
+        </calls>
+        <sms>sms</sms>
+        <tariffication>sec60</tariffication>
+        <favorite-number>3</favorite-number>
+    </start-tariff>
+    
+    <start-tariff id="tariff-1.2.444.222" title="start">
+        <operator-name>life</operator-name>
+        <payroll>8.7</payroll>
+        <year>2021-10</year>
+        <connection-fee>1.0</connection-fee>
+        <calls>
+            <call-prices-on-net>0.045</call-prices-on-net>
+            <call-prices-on-another-network>0.99</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.94</call-prices-to-landline-phones>
+        </calls>
+        <sms>sms</sms>
+        <tariffication>sec60</tariffication>
+        <favorite-number>3</favorite-number>
+    </start-tariff>
+    
+    <start-tariff id="tariff-1.3.143.314" title="start">
+        <operator-name>mts</operator-name>
+        <payroll>8.9</payroll>
+        <year>2021-10</year>
+        <connection-fee>1.5</connection-fee>
+        <calls>
+            <call-prices-on-net>0.050</call-prices-on-net>
+            <call-prices-on-another-network>0.101</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.95</call-prices-to-landline-phones>
+        </calls>
+        <sms>sms</sms>
+        <tariffication>sec60</tariffication>
+        <favorite-number>3</favorite-number>
+    </start-tariff>
+
+   <family-tariff id="tariff-2.1.345.212" title="family">
+       <operator-name>a1</operator-name>
+       <payroll>6.5</payroll>
+       <year>2021-10</year>
+       <connection-fee>3</connection-fee>
+       <calls>
+           <call-prices-on-net>0.045</call-prices-on-net>
+           <call-prices-on-another-network>0.104</call-prices-on-another-network>
+           <call-prices-to-landline-phones>0.103</call-prices-to-landline-phones>
+       </calls>
+       <sms>sms</sms>
+       <tariffication>sec60</tariffication>
+       <family-number>5</family-number>
+   </family-tariff>
+
+    <family-tariff id="tariff-2.2.311.212" title="family">
+        <operator-name>life</operator-name>
+        <payroll>5.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>3</connection-fee>
+        <calls>
+            <call-prices-on-net>0.038</call-prices-on-net>
+            <call-prices-on-another-network>0.99</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.101</call-prices-to-landline-phones>
+        </calls>
+        <sms>sms</sms>
+        <tariffication>sec60</tariffication>
+        <family-number>5</family-number>
+    </family-tariff>
+    
+    <family-tariff id="tariff-2.3.345.541" title="family">
+        <operator-name>mts</operator-name>
+        <payroll>5.5</payroll>
+        <year>2021-10</year>
+        <connection-fee>3</connection-fee>
+        <calls>
+            <call-prices-on-net>0.043</call-prices-on-net>
+            <call-prices-on-another-network>0.103</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.105</call-prices-to-landline-phones>
+        </calls>
+        <sms>sms</sms>
+        <tariffication>sec60</tariffication>
+        <family-number>5</family-number>
+    </family-tariff>
+
+    <business-tariff id="tariff-3.1.315.331" title="business">
+        <operator-name>a1</operator-name>
+        <payroll>25.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>0.5</connection-fee>
+        <calls>
+            <call-prices-on-net>0.010</call-prices-on-net>
+            <call-prices-on-another-network>0.090</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.042</call-prices-to-landline-phones>
+        </calls>
+        <sms>mms</sms>
+        <tariffication>sec12</tariffication>
+        <call-price-for-international-connection>0.090</call-price-for-international-connection>
+    </business-tariff>
+
+    <business-tariff id="tariff-3.2.341.241" title="business">
+        <operator-name>life</operator-name>
+        <payroll>23.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>0.0</connection-fee>
+        <calls>
+            <call-prices-on-net>0.09</call-prices-on-net>
+            <call-prices-on-another-network>0.080</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.030</call-prices-to-landline-phones>
+        </calls>
+        <sms>mms</sms>
+        <tariffication>sec12</tariffication>
+        <call-price-for-international-connection>0.090</call-price-for-international-connection>
+    </business-tariff>
+
+    <business-tariff id="tariff-3.3.355.542" title="business">
+        <operator-name>mts</operator-name>
+        <payroll>25.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>0.5</connection-fee>
+        <calls>
+            <call-prices-on-net>0.010</call-prices-on-net>
+            <call-prices-on-another-network>0.090</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.040</call-prices-to-landline-phones>
+        </calls>
+        <sms>mms</sms>
+        <tariffication>sec12</tariffication>
+        <call-price-for-international-connection>0.085</call-price-for-international-connection>
+    </business-tariff>
+
+    <unlimited-tariff id="tariff-4.1.455.142" title="unlimited">
+        <operator-name>a1</operator-name>
+        <payroll>30.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>0.0</connection-fee>
+        <calls>
+            <call-prices-on-net>0.0</call-prices-on-net>
+            <call-prices-on-another-network>0.0</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.0</call-prices-to-landline-phones>
+        </calls>
+        <sms>mms</sms>
+        <tariffication>sec60</tariffication>
+        <unlimited-calls-to-any-network>12.0</unlimited-calls-to-any-network>
+    </unlimited-tariff>
+
+    <unlimited-tariff id="tariff-4.2.354.541" title="unlimited">
+        <operator-name>life</operator-name>
+        <payroll>28.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>0.0</connection-fee>
+        <calls>
+            <call-prices-on-net>0.0</call-prices-on-net>
+            <call-prices-on-another-network>0.0</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.0</call-prices-to-landline-phones>
+        </calls>
+        <sms>mms</sms>
+        <tariffication>sec60</tariffication>
+        <unlimited-calls-to-any-network>9.0</unlimited-calls-to-any-network>
+    </unlimited-tariff>
+
+    <unlimited-tariff id="tariff-4.3.515.122" title="unlimited">
+        <operator-name>mts</operator-name>
+        <payroll>31.0</payroll>
+        <year>2021-10</year>
+        <connection-fee>0.0</connection-fee>
+        <calls>
+            <call-prices-on-net>0.0</call-prices-on-net>
+            <call-prices-on-another-network>0.0</call-prices-on-another-network>
+            <call-prices-to-landline-phones>0.0</call-prices-to-landline-phones>
+        </calls>
+        <sms>mms</sms>
+        <tariffication>sec60</tariffication>
+        <unlimited-calls-to-any-network>10.0</unlimited-calls-to-any-network>
+    </unlimited-tariff>
+</tariffs>
+

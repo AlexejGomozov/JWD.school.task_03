@@ -22,7 +22,6 @@ public class TariffBuilderFactory {
                 return new TariffSaxBuilder();
             }
             default -> throw new TariffException(String.format("No such constant (%s)", parserForm));
-
         }
     }
 }

@@ -1,7 +1,5 @@
 package com.javacourse.task3.entity;
 
-import java.util.Objects;
-
 public class StartTariff extends Tariff{
    private int favoriteNumber;
 
@@ -36,7 +34,7 @@ public class StartTariff extends Tariff{
       final StringBuilder sb = new StringBuilder("StartTariff{");
       sb.append(super.toString());
         sb.append(", favoriteNumber = ").append(favoriteNumber);
-      sb.append('}');
+      sb.append("}");
       return sb.toString();
     }
 }
